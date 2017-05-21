@@ -10,7 +10,7 @@ import '@angular/forms';
 import '@angular/animations';
 
 // RxJS
-import 'rxjs';
+import 'rxjs/add/operator/toPromise';
 
 // Other vendors for example jQuery, Lodash or Bootstrap
 // You can import js, ts, css, sass, ...
