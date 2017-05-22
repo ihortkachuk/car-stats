@@ -24,6 +24,15 @@ export class AuthService {
       .catch(this.handleError);
   }
 
+  signup(username: string, password: string): Promise<any> {
+    return this.http.post(`${API}/user`, { user_name: username, password })
+      .toPromise()
+      .then(res => {
+        console.log(res);
+      })
+      .catch(this.handleError);
+  }
+
   isLoggedIn() {
     return this.loggedIn;
   }

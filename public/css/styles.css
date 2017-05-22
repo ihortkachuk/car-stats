@@ -8,6 +8,10 @@ body {
   background: linear-gradient(to bottom, #4e4376, #2b5876);
 }
 
+a {
+  cursor: pointer;
+}
+
 .mb-20 {
   margin-bottom: 20px;
 }
