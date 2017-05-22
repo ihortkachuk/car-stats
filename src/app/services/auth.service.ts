@@ -33,11 +33,11 @@ export class AuthService {
       .catch(this.handleError);
   }
 
-  isLoggedIn() {
+  isLoggedIn(): boolean {
     return this.loggedIn;
   }
 
-  logout() {
+  logout(): void {
     localStorage.removeItem('auth_token');
     this.loggedIn = false;
   }

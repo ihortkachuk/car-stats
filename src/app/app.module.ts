@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AuthService } from './services/authService';
+import { AuthService } from './services/auth.service';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';

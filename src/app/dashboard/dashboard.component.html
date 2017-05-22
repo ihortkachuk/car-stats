@@ -4,7 +4,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3">
-                        <h1>CarStats</h1>
+                        <h1>
+                            <i class="fa fa-signal" aria-hidden="true"></i>
+                            CarStats
+                        </h1>
                     </div>
                     <div class="col-md-9">
                         <ul class="nav navbar-nav navbar-right">
@@ -25,13 +28,21 @@
                     <div class="col-md-12">
                         <ul class="nav navbar-nav">
                             <li>
-                                <a routerLink="/dashboard" routerLinkActive="active">
-                                    <i class="fa fa-television" aria-hidden="true"></i>
+                                <a
+                                    routerLink="/dashboard"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{exact:true}"
+                                >
+                                    <i class="fa fa-desktop" aria-hidden="true"></i>
                                     Dashboard
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a
+                                    routerLink="/dashboard/cars"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{exact:true}"
+                                >
                                     <i class="fa fa-truck" aria-hidden="true"></i>
                                     Cars
                                 </a>

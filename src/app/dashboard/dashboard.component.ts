@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../services/authService'
+import { AuthService } from '../services/auth.service'
 
 @Component({
   templateUrl: 'dashboard.component.html',
@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {}
 
-  logout() {
+  logout(): void {
     this.authService.logout();
     this.router.navigate(['login']);
   }
