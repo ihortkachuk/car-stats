@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { AuthService } from '../services/authService';
+import { fadeIn } from '../animations/fade-in';
 
 @Component({
   templateUrl: 'login.component.html',
-  styleUrls: ['login.component.sass']
+  styleUrls: ['login.component.sass'],
+  animations: [fadeIn]
 })
 export class LoginComponent implements OnInit {
   form: FormGroup;

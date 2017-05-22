@@ -2,6 +2,12 @@ html, body {
   height: 100%;
 }
 
+body {
+  background: #2b5876;
+  background: -webkit-linear-gradient(to bottom, #4e4376, #2b5876);
+  background: linear-gradient(to bottom, #4e4376, #2b5876);
+}
+
 .mb-20 {
   margin-bottom: 20px;
 }
@@ -22,4 +28,28 @@ html, body {
 .content .table td,
 .content .table th {
   padding: 12px
+}
+
+.spinner{
+    width: 40px;
+    height: 40px;
+    border: 3px solid #2b3d51;
+    border-top:3px solid #f3f3f3;
+    border-radius: 100%;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right: 0;
+    margin: auto;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
