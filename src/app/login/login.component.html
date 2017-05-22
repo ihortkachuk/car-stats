@@ -6,8 +6,8 @@
             </div>
 
             <div class="panel-body">
-                <div *ngIf="false" class="alert alert-danger col-sm-12">
-                    Here will be an error!
+                <div *ngIf="error" class="alert alert-danger col-sm-12">
+                    {{ error }}
                 </div>
 
                 <form class="form-horizontal" role="form" (ngSubmit)="login()" [formGroup]="form">

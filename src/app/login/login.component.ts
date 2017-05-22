@@ -10,6 +10,7 @@ import { AuthService } from '../services/authService';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   isFetching: boolean = false;
+  error: string;
 
   constructor(private fb: FormBuilder,
               private authService: AuthService,
@@ -29,11 +30,14 @@ export class LoginComponent implements OnInit {
   login() {
     const { username, password } = this.form.value;
     this.isFetching = true;
+    this.error = '';
     this.authService.login(username, password).then(
       () => {
         this.router.navigate(['dashboard']);
       },
-      () => {
+      (err) => {
+        const body = err.json() || '';
+        this.error = body ? body.message : err.message;
         this.isFetching = false;
       }
     );
