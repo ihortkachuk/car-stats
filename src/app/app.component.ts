@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from './services/auth.service';
 
 import '../../public/css/styles.css';
 
@@ -9,12 +7,7 @@ import '../../public/css/styles.css';
   templateUrl: 'app.component.html',
 })
 export class AppComponent implements OnInit {
-  constructor(private router: Router,
-              private authService: AuthService) { }
+  constructor() { }
 
-  ngOnInit() {
-    // if (this.authService.isLoggedIn()) {
-    //   this.router.navigate(['dashboard']);
-    // }
-  }
+  ngOnInit() { }
 }
