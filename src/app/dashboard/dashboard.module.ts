@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardHomeComponent } from './home/dashboard-home.component';
 import { CarsComponent } from './cars/cars.component';
 import { AddCarComponent } from './add-car/add-car.component';
+import { EditCarComponent } from './edit-car/edit-car.component';
 
 import { AuthGuard } from '../shared/guards/auth-guard.service'
 import { CarsService } from '../services/cars.service';
@@ -21,7 +22,8 @@ import { CarsService } from '../services/cars.service';
         DashboardComponent,
         DashboardHomeComponent,
         CarsComponent,
-        AddCarComponent
+        AddCarComponent,
+        EditCarComponent
     ],
     providers: [
       AuthGuard,

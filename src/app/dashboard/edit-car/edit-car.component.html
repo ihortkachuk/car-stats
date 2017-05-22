@@ -1,0 +1,41 @@
+<div class="row content-header">
+    <div class="col-md-12">
+        <h2>Edit car</h2>
+    </div>
+</div>
+<div *ngIf="car" class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <form class="form-horizontal" role="form" (ngSubmit)="edit()" [formGroup]="form">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Gov number</label>
+                    <div class="col-md-10">
+                        <input
+                            type="text"
+                            class="form-control"
+                            formControlName="gov_number"
+                            placeholder="Exemple: АН 12-34 СА"
+                        >
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Car type</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" formControlName="car_type" placeholder="Exemple: VW">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Gov number trailer</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" formControlName="gov_number_trailer" placeholder="Gov number trailer">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-2">
+                        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
