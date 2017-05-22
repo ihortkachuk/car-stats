@@ -7,26 +7,27 @@ import { Car } from '../shared/car.model';
 
 @Injectable()
 export class CarsService {
-  token: string = localStorage.getItem('auth_token');
-
   constructor(private http: Http) {  }
 
   get(): Promise<any> {
-    return this.http.get(`${API}/car?token=${this.token}`)
+    const token = localStorage.getItem('auth_token');
+    return this.http.get(`${API}/car?token=${token}`)
       .toPromise()
       .then(res => res.json())
       .catch(this.handleError)
   }
 
   add(data: Car): Promise<any> {
-    return this.http.post(`${API}/car?token=${this.token}`, data)
+    const token = localStorage.getItem('auth_token');
+    return this.http.post(`${API}/car?token=${token}`, data)
       .toPromise()
       .then(res => res.json())
       .catch(this.handleError)
   }
 
   delete(id: number): Promise<any> {
-    return this.http.delete(`${API}/car/${id}?token=${this.token}`)
+    const token = localStorage.getItem('auth_token');
+    return this.http.delete(`${API}/car/${id}?token=${token}`)
       .toPromise()
       .then(res => res.json())
       .catch(this.handleError)
