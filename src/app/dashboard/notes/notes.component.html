@@ -18,7 +18,7 @@
             </div>
             <table *ngIf="notes?.notes.length > 0" class="table table-bordered table-striped">
                 <tr>
-                    <th>ID</th>
+                    <th>№</th>
                     <th>Car</th>
                     <th>Date</th>
                     <th>Km</th>
@@ -26,8 +26,8 @@
                     <th width="50%">Works</th>
                     <th width="10%">Actions</th>
                 </tr>
-                <tr *ngFor="let note of notes.notes">
-                    <td>{{ note.id }}</td>
+                <tr *ngFor="let note of notes.notes; let i = index;">
+                    <td>{{ i + 1 }}</td>
                     <td><a [routerLink]="[note.car.id]">{{ note.car.car_type }} {{ note.car.gov_number }}</a></td>
                     <td>{{ note.date | date:'dd/MM/y' }}</td>
                     <td>{{ note.km }}</td>

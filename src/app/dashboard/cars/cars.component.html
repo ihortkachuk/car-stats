@@ -18,14 +18,14 @@
             </div>
             <table *ngIf="cars?.length > 0" class="table table-bordered table-striped">
                 <tr>
-                    <th>ID</th>
+                    <th>№</th>
                     <th>Gov Number</th>
                     <th>Car type</th>
                     <th>Gov trailer number</th>
                     <th width="10%">Actions</th>
                 </tr>
-                <tr *ngFor="let car of cars">
-                    <td>{{ car.id }}</td>
+                <tr *ngFor="let car of cars; let i = index;">
+                    <td>{{ i + 1 }}</td>
                     <td>{{ car.gov_number }}</td>
                     <td>{{ car.car_type }}</td>
                     <td>{{ car.gov_number_trailer }}</td>
