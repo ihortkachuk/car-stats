@@ -12,7 +12,7 @@
                     <div class="col-md-10">
                         <select class="form-control" formControlName="car">
                             <option value="" disabled selected>Select a car</option>
-                            <option [value]="car.id" *ngFor="let car of cars">{{ car.car_type }}</option>
+                            <option [value]="car.id" *ngFor="let car of cars">{{ car.car_type }} {{ car.gov_number }}</option>
                         </select>
                         <span *ngIf="form.controls['car'].hasError('required') && form.controls['car'].touched" class="help-block">
                             The field is required.
