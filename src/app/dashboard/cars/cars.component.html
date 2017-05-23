@@ -30,10 +30,10 @@
                     <td>{{ car.car_type }}</td>
                     <td>{{ car.gov_number_trailer }}</td>
                     <td class="text-center">
-                        <a [routerLink]="[car.id, 'edit']" class="btn btn-sm btn-info">
+                        <a [class.disabled]="processing" [routerLink]="[car.id, 'edit']" class="btn btn-sm btn-info">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </a>
-                        <button type="button" class="btn btn-sm btn-danger" (click)="delete(car.id)">
+                        <button [disabled]="processing" type="button" class="btn btn-sm btn-danger" (click)="delete(car.id)">
                             <i class="fa fa-trash" aria-hidden="true"></i>
                         </button>
                     </td>
