@@ -12,11 +12,11 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <div class="text-center" *ngIf="notes?.length == 0">
+            <div class="text-center" *ngIf="notes?.notes.length == 0">
                 <h3>No notes</h3>
                 <p>Click on the "Add note" button for adding a new note!</p>
             </div>
-            <table *ngIf="notes?.length > 0" class="table table-bordered table-striped">
+            <table *ngIf="notes?.notes.length > 0" class="table table-bordered table-striped">
                 <tr>
                     <th>ID</th>
                     <th>Car</th>
@@ -24,22 +24,23 @@
                     <th>Km</th>
                     <th>Pays</th>
                     <th width="50%">Works</th>
+                    <th width="10%">Actions</th>
                 </tr>
-                <tr *ngFor="let note of notes">
+                <tr *ngFor="let note of notes.notes">
                     <td>{{ note.id }}</td>
-                    <td>{{ note.car.car_type }}</td>
+                    <td><a [routerLink]="[note.car.id]">{{ note.car.car_type }}</a></td>
                     <td>{{ note.date | date:'dd/MM/y' }}</td>
                     <td>{{ note.km }}</td>
                     <td>{{ note.pays | currency:'UAH' }}</td>
                     <td>{{ note.works }}</td>
-                    <!-- <td class="text-center">
-                        <a [class.disabled]="processing" [routerLink]="[car.id, 'edit']" class="btn btn-sm btn-info">
+                    <td class="text-center">
+                        <a [routerLink]="[note.id, 'edit']" class="btn btn-sm btn-info">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </a>
-                        <button [disabled]="processing" type="button" class="btn btn-sm btn-danger" (click)="delete(car.id)">
+                        <button type="button" class="btn btn-sm btn-danger" (click)="delete(note.id)">
                             <i class="fa fa-trash" aria-hidden="true"></i>
                         </button>
-                    </td> -->
+                    </td>
                 </tr>
             </table>
         </div>

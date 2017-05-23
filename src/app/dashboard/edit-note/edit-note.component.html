@@ -1,0 +1,56 @@
+<div class="row content-header">
+    <div class="col-md-12">
+        <h2>Edit note</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <form class="form-horizontal" role="form" (ngSubmit)="edit()" [formGroup]="form">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Car:</label>
+                    <div class="col-md-10">
+                        <select class="form-control" formControlName="car">
+                            <option value="" disabled selected>Select a car</option>
+                            <option [value]="car.id" *ngFor="let car of cars">{{ car.car_type }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Date:</label>
+                    <div class="col-md-10">
+                        <p-calendar
+                            formControlName="date"
+                            dateFormat="dd/mm/yy"
+                            [showIcon]="true"
+                            [maxDate]="maxDate"
+                        ></p-calendar>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Km:</label>
+                    <div class="col-md-10">
+                        <input type="text" formControlName="km" class="form-control" placeholder="Kilometers">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Pays:</label>
+                    <div class="col-md-10">
+                        <input type="text" formControlName="pays" class="form-control" placeholder="Pays">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Works:</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" formControlName="works" rows="4" cols="80" placeholder="Works"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-2">
+                        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

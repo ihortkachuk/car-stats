@@ -7,11 +7,13 @@ import { DashboardHomeComponent } from './home/dashboard-home.component';
 import { CarsComponent } from './cars/cars.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import { EditCarComponent } from './edit-car/edit-car.component';
+import { CarComponent } from './car/car.component';
 
 import { NotesComponent } from './notes/notes.component';
 import { AddNoteComponent } from './add-note/add-note.component';
+import { EditNoteComponent } from './edit-note/edit-note.component';
 
-import { AuthGuard } from '../shared/guards/auth-guard.service'
+import { AuthGuard } from '../shared/guards/auth-guard.service';
 
 export const dashboardRoutes: Routes = [
   {
@@ -52,8 +54,12 @@ export const dashboardRoutes: Routes = [
             component: AddNoteComponent,
           },
           {
+            path: ':id',
+            component: CarComponent,
+          },
+          {
             path: ':id/edit',
-            component: EditCarComponent,
+            component: EditNoteComponent,
           },
         ]
       },
