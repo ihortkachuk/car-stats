@@ -40,6 +40,14 @@ export class NotesService {
       .catch(this.handleError);
   }
 
+  delete(id: number): Promise<any> {
+    const token = localStorage.getItem('auth_token');
+    return this.http.delete(`${API}/notes/${id}?token=${token}`)
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError);
+  }
+
   private handleError(error: any): Promise<any> {
     return Promise.reject(error.message || error);
   }
