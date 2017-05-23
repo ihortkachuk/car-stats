@@ -29,8 +29,8 @@ export class AddNoteComponent implements OnInit {
     this.form = this.fb.group({
       car: ['', Validators.required],
       date: [new Date(), Validators.required],
-      km: ['', Validators.required],
-      pays: [''],
+      km: [null, Validators.required],
+      pays: [null],
       works: ['', Validators.required]
     });
   }

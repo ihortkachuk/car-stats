@@ -42,8 +42,8 @@ export class EditNoteComponent implements OnInit {
     this.form = this.fb.group({
       car: ['', Validators.required],
       date: ['', Validators.required],
-      km: ['', Validators.required],
-      pays: [''],
+      km: [null, Validators.required],
+      pays: [null],
       works: ['', Validators.required]
     });
   }
