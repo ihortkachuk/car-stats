@@ -48,7 +48,11 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a
+                                    routerLink="/dashboard/notes"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{exact:true}"
+                                >
                                     <i class="fa fa-edit" aria-hidden="true"></i>
                                     Notes
                                 </a>

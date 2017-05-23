@@ -15,3 +15,8 @@ import 'rxjs/add/operator/toPromise';
 // Other vendors for example jQuery, Lodash or Bootstrap
 // You can import js, ts, css, sass, ...
 import 'sweetalert2';
+import 'primeng/primeng';
+
+import 'sweetalert2/dist/sweetalert2.min.css'
+import 'primeng/resources/primeng.min.css';
+import 'primeng/resources/themes/omega/theme.css';

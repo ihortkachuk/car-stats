@@ -1,0 +1,47 @@
+<div class="row content-header">
+    <div class="col-md-8">
+        <h2>Notes List</h2>
+    </div>
+    <div class="col-md-4 text-right">
+        <a routerLink="add" class="btn btn-success">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            Add Note
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="text-center" *ngIf="notes?.length == 0">
+                <h3>No notes</h3>
+                <p>Click on the "Add note" button for adding a new note!</p>
+            </div>
+            <table *ngIf="notes?.length > 0" class="table table-bordered table-striped">
+                <tr>
+                    <th>ID</th>
+                    <th>Car</th>
+                    <th>Date</th>
+                    <th>Km</th>
+                    <th>Pays</th>
+                    <th width="50%">Works</th>
+                </tr>
+                <tr *ngFor="let note of notes">
+                    <td>{{ note.id }}</td>
+                    <td>{{ note.car }}</td>
+                    <td>{{ note.date | date:'medium' }}</td>
+                    <td>{{ note.km }}</td>
+                    <td>{{ note.pays | currency:'UAH' }}</td>
+                    <td>{{ note.works }}</td>
+                    <!-- <td class="text-center">
+                        <a [class.disabled]="processing" [routerLink]="[car.id, 'edit']" class="btn btn-sm btn-info">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </a>
+                        <button [disabled]="processing" type="button" class="btn btn-sm btn-danger" (click)="delete(car.id)">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </td> -->
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
