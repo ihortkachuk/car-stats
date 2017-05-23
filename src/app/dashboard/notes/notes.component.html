@@ -28,7 +28,7 @@
                 </tr>
                 <tr *ngFor="let note of notes.notes">
                     <td>{{ note.id }}</td>
-                    <td><a [routerLink]="[note.car.id]">{{ note.car.car_type }}</a></td>
+                    <td><a [routerLink]="[note.car.id]">{{ note.car.car_type }} {{ note.car.gov_number }}</a></td>
                     <td>{{ note.date | date:'dd/MM/y' }}</td>
                     <td>{{ note.km }}</td>
                     <td>{{ note.pays | currency:'UAH' }}</td>
