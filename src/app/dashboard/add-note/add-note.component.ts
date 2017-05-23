@@ -12,6 +12,7 @@ import { NotesService } from '../../services/notes.service';
 export class AddNoteComponent implements OnInit {
   form: FormGroup;
   cars: Car[];
+  maxDate: Date;
 
   constructor(private fb: FormBuilder,
               private carsService: CarsService,
@@ -19,6 +20,7 @@ export class AddNoteComponent implements OnInit {
               private router: Router) {  }
 
   ngOnInit() {
+    this.maxDate = new Date();
     this.createForm();
     this.getCars();
   }
