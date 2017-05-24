@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Car } from '../../shared/car.model';
 import { NotesService } from '../../services/notes.service';
 import { CarsService } from '../../services/cars.service';
-import { getTimestamp } from '../../shared/helpers'
+import { getTimestamp } from '../../shared/helpers';
 
 @Component({
   templateUrl: 'car.component.html',

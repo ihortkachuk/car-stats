@@ -14,7 +14,7 @@
                 <dt>Car type: </dt>
                 <dd>{{ car.car_type }}</dd>
                 <dt>Gov number trailer: </dt>
-                <dd>{{ car.gov_number_trailer }}</dd>
+                <dd>{{ car.gov_number_trailer || '---' }}</dd>
                 <dt>Total run: </dt>
                 <dd>{{ stats.run }} km</dd>
                 <dt>Payments: </dt>
@@ -53,7 +53,7 @@
                     <td>{{ i + 1 }}</td>
                     <td>{{ note.date | date:'dd/MM/y' }}</td>
                     <td>{{ note.km }}</td>
-                    <td>{{ note.pays | currency:'UAH' }}</td>
+                    <td>{{ (note.pays | currency:'UAH') || '---' }}</td>
                     <td>{{ note.works }}</td>
                 </tr>
             </table>

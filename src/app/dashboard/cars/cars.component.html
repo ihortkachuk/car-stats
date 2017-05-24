@@ -28,7 +28,7 @@
                     <td>{{ i + 1 }}</td>
                     <td>{{ car.gov_number }}</td>
                     <td>{{ car.car_type }}</td>
-                    <td>{{ car.gov_number_trailer }}</td>
+                    <td>{{ car.gov_number_trailer || '---' }}</td>
                     <td class="text-center">
                         <a [class.disabled]="processing" [routerLink]="[car.id, 'edit']" class="btn btn-sm btn-info">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
