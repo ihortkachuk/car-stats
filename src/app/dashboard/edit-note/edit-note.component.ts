@@ -6,6 +6,7 @@ import { Notes } from '../../shared/notes.model';
 import { Car } from '../../shared/car.model';
 import { NotesService } from '../../services/notes.service';
 import { CarsService } from '../../services/cars.service';
+import { getTimestamp } from '../../shared/helpers';
 
 @Component({
   templateUrl: 'edit-note.component.html',
@@ -54,14 +55,9 @@ export class EditNoteComponent implements OnInit {
     });
   }
 
-  private getTimestamp(date?: Date): number {
-    const dateTime = date ? new Date(date).getTime() : new Date().getTime();
-    return Math.floor(dateTime / 1000);
-  }
-
   edit() {
     const data = Object.assign({}, this.form.value, {
-      date: this.getTimestamp(this.form.value.date)
+      date: getTimestamp(this.form.value.date)
     });
     this.notesService.edit(this.id, data).then(() => {
       this.router.navigate(['/dashboard/notes']);

@@ -24,6 +24,7 @@ import { NotesService } from '../services/notes.service';
   imports: [
     CommonModule,
     dashboardRouting,
+    FormsModule,
     ReactiveFormsModule,
     CalendarModule
   ],

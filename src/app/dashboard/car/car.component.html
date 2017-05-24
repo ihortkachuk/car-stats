@@ -1,1 +1,62 @@
-<h1>Car stats</h1>
+<div class="row content-header">
+    <div class="col-md-12">
+        <h2>Car stats</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card" *ngIf="car && stats">
+            <h3>Car {{ car.car_type }} {{ car.gov_number }}:</h3>
+            <hr>
+            <dl>
+                <dt>Gov Number: </dt>
+                <dd>{{ car.gov_number }}</dd>
+                <dt>Car type: </dt>
+                <dd>{{ car.car_type }}</dd>
+                <dt>Gov number trailer: </dt>
+                <dd>{{ car.gov_number_trailer }}</dd>
+                <dt>Total run: </dt>
+                <dd>{{ stats.run }} km</dd>
+                <dt>Payments: </dt>
+                <dd>{{ stats.payments | currency:'UAH' }}</dd>
+            </dl>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Notes:</h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="filter text-right">
+                        <span>From:</span>
+                        <p-calendar [(ngModel)]="from" [maxDate]="to" dateFormat="dd/mm/yy"></p-calendar>
+                        <span>To:</span>
+                        <p-calendar #name="ngModel" [(ngModel)]="to" [minDate]="from" [maxDate]="to" dateFormat="dd/mm/yy"></p-calendar>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            (click)="filter()"
+                        >
+                            Apply
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>№</th>
+                    <th>Date</th>
+                    <th>Km</th>
+                    <th>Pays</th>
+                    <th width="50%">Works</th>
+                </tr>
+                <tr *ngFor="let note of stats.notes; let i = index;">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ note.date | date:'dd/MM/y' }}</td>
+                    <td>{{ note.km }}</td>
+                    <td>{{ note.pays | currency:'UAH' }}</td>
+                    <td>{{ note.works }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

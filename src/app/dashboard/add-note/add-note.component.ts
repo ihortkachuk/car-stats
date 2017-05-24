@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Car } from '../../shared/car.model';
 import { CarsService } from '../../services/cars.service';
 import { NotesService } from '../../services/notes.service';
+import { getTimestamp } from '../../shared/helpers';
 
 @Component({
   templateUrl: 'add-note.component.html',
@@ -41,16 +42,11 @@ export class AddNoteComponent implements OnInit {
     });
   }
 
-  private getTimestamp(date?: Date): number {
-    const dateTime = date ? new Date(date).getTime() : new Date().getTime();
-    return Math.floor(dateTime / 1000);
-  }
-
   create() {
     const carId = this.form.value.car;
     const data = {
       car: carId,
-      date: this.getTimestamp(this.form.value.date),
+      date: getTimestamp(this.form.value.date),
       km: this.form.value.km,
       pays: this.form.value.pays,
       works: this.form.value.works

@@ -24,6 +24,15 @@ export class NotesService {
       .catch(this.handleError);
   }
 
+  getCarStats(id: number, filters: any): Promise<any> {
+    const token = localStorage.getItem('auth_token');
+    const params = `&date_from=${filters.from}&date_to=${filters.to}`;
+    return this.http.get(`${API}/notes/${id}?token=${token}${params}`)
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError);
+  }
+
   add(id: number, data: any): Promise<any> {
     const token = localStorage.getItem('auth_token');
     return this.http.post(`${API}/notes/${id}?token=${token}`, data)
