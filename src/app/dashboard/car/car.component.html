@@ -18,7 +18,7 @@
                 <dt>Total run: </dt>
                 <dd>{{ stats.run }} km</dd>
                 <dt>Payments: </dt>
-                <dd>{{ stats.payments | currency:'UAH' }}</dd>
+                <dd>{{ stats.payments | currency:'UAH':true:'1.0' }}</dd>
             </dl>
             <hr>
             <div class="row">
@@ -53,7 +53,7 @@
                     <td>{{ i + 1 }}</td>
                     <td>{{ note.date | date:'dd/MM/y' }}</td>
                     <td>{{ note.km }}</td>
-                    <td>{{ (note.pays | currency:'UAH') || '---' }}</td>
+                    <td>{{ (note.pays | currency:'UAH':true:'1.0') || '---' }}</td>
                     <td>{{ note.works }}</td>
                 </tr>
             </table>

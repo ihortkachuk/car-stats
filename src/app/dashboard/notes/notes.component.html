@@ -31,7 +31,7 @@
                     <td><a [routerLink]="[note.car.id]">{{ note.car.car_type }} {{ note.car.gov_number }}</a></td>
                     <td>{{ note.date | date:'dd/MM/y' }}</td>
                     <td>{{ note.km }}</td>
-                    <td>{{ (note.pays | currency:'UAH') || '---' }}</td>
+                    <td>{{ (note.pays | currency:'UAH':true:'1.0') || '---' }}</td>
                     <td>{{ note.works }}</td>
                     <td class="text-center">
                         <a [routerLink]="[note.id, 'edit']" class="btn btn-sm btn-info">
